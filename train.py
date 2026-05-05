@@ -82,6 +82,8 @@ class MGNTrainer:
             sampler=sampler,
             pin_memory=True,
             num_workers=cfg.num_dataloader_workers,
+            persistent_workers=cfg.persistent_workers,
+            prefetch_factor=cfg.prefetch_factor,
         )
 
         # instantiate the model
