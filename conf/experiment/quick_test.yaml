@@ -1,0 +1,9 @@
+# @package _global_
+# Quick smoke test: runs in a few minutes to verify the pipeline works end-to-end.
+
+epochs: 2
+num_training_samples: 20
+num_training_time_steps: 50
+num_dataloader_workers: 2
+num_test_samples: 3
+num_test_time_steps: 50

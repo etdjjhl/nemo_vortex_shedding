@@ -1,0 +1,49 @@
+hydra:
+  job:
+    chdir: True
+  run:
+    dir: ./outputs/${now:%Y-%m-%d}/${now:%H-%M-%S}
+
+# reproducibility
+seed: 42
+
+# data configs
+data_dir: ./raw_dataset/cylinder_flow/cylinder_flow
+
+# training configs
+batch_size: 2
+epochs: 25
+num_training_samples: 400
+num_training_time_steps: 300
+lr: 0.0001
+lr_decay_rate: 0.9999991
+num_input_features: 6
+num_output_features: 3
+num_edge_features: 3
+
+# performance configs
+use_apex: False
+amp: True
+jit: False
+num_dataloader_workers: 4
+do_concat_trick: False
+num_processor_checkpoint_segments: 0
+recompute_activation: False
+
+# wandb (disabled by default — no account needed)
+wandb_mode: disabled
+watch_model: False
+
+ckpt_path: "./checkpoints"
+
+# inference & visualization configs
+num_test_samples: 10
+num_test_time_steps: 300
+viz_vars: ["u", "v", "p"]
+frame_skip: 10
+frame_interval: 1
+
+# monitoring configs
+tb_log_dir: "./logs/tensorboard"
+gpu_log_dir: "./logs/gpu"
+gpu_monitor_interval_sec: 5

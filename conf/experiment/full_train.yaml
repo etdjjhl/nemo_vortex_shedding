@@ -1,0 +1,6 @@
+# @package _global_
+# Full training as described in the PhysicsNeMo documentation.
+
+epochs: 25
+num_training_samples: 400
+num_training_time_steps: 300
