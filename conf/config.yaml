@@ -11,7 +11,7 @@ seed: 42
 data_dir: ./raw_dataset/cylinder_flow/cylinder_flow
 
 # training configs
-batch_size: 4
+batch_size: 8
 epochs: 25
 num_training_samples: 400
 num_training_time_steps: 300
